@@ -6,32 +6,21 @@
 //  Copyright © 2017 drugeroos. All rights reserved.
 //
 
-import PusherSwift
 import RxCocoa
 import RxSwift
 import UIKit
 
-class ViewController: UIViewController, PusherDelegate {
+class ViewController: UIViewController {
     @IBOutlet var categoryTableView: UITableView!
     @IBOutlet var medicationTableView: UITableView!
     @IBOutlet var tabBar: UITabBar!
     
-    var pusher: Pusher!
-    var channel: PusherChannel!
     var medicationImageSelected: UIImage!
     
-    let disposeBag = DisposeBag()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        pusher = Pusher(key: "b91115f15fb79204ed0d",
-                        options: PusherClientOptions(authMethod: .endpoint(authEndpoint: "https://secure-temple-86252.herokuapp.com/pusher/auth"),
-                                                     host: .cluster("eu")))
-        pusher.delegate = self
-        pusher.connect()
-        
-        channel = pusher?.subscribe("private-my-channel")
         
         let categories = ["Drugs","Natural remedies","Bach flowers - Rescue","Homeopathy","Diabetes","Overweight & Nutrition","Vitamins & Minerals","Cosmetics","Body care","Mother and child","Medical devices","Incontinence","First aid & Nursing","Veterinary medicines","Medicine chest","GIFT IDEAS"]
         Observable.just(categories).bind(to: categoryTableView.rx.items(cellIdentifier: "CategoryCell",
@@ -67,14 +56,6 @@ class ViewController: UIViewController, PusherDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let warningVC = segue.destination as! WarningViewController
         warningVC.medicationImage = medicationImageSelected
-    }
-    
-    func subscribedToChannel(name: String) {
-        //channel.trigger(eventName: "client-my-event", data: ["key" : "value"])
-    }
-    
-    func debugLog(message: String) {
-        print(message)
     }
 }
 

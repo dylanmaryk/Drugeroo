@@ -17,6 +17,10 @@ class OrderViewController: UIViewController {
         super.viewDidLoad()
         
         medicationImageView.image = medicationImage
+        medicationImageView.frame = CGRect(x: medicationImageView.frame.origin.x,
+                                           y: medicationImageView.frame.origin.y,
+                                           width: medicationImageView.frame.size.width,
+                                           height: medicationImage.size.height - 82)
     }
     
     @IBAction func paypalButtonTapped(_ sender: UIButton) {
