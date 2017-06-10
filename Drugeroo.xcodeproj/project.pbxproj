@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0D82B90E63A4C82CB34CD1C7 /* Pods_Drugeroo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44553D1E698473FA519BA148 /* Pods_Drugeroo.framework */; };
+		356932581EEC492D0032A029 /* MedicationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356932571EEC492D0032A029 /* MedicationCell.swift */; };
 		35BA11991EEC0F5B001AD8D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BA11981EEC0F5B001AD8D6 /* AppDelegate.swift */; };
 		35BA119B1EEC0F5B001AD8D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BA119A1EEC0F5B001AD8D6 /* ViewController.swift */; };
 		35BA119E1EEC0F5B001AD8D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35BA119C1EEC0F5B001AD8D6 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		356932571EEC492D0032A029 /* MedicationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationCell.swift; sourceTree = "<group>"; };
 		35BA11951EEC0F5B001AD8D6 /* Drugeroo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drugeroo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BA11981EEC0F5B001AD8D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35BA119A1EEC0F5B001AD8D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,7 @@
 			children = (
 				35BA11981EEC0F5B001AD8D6 /* AppDelegate.swift */,
 				35BA119A1EEC0F5B001AD8D6 /* ViewController.swift */,
+				356932571EEC492D0032A029 /* MedicationCell.swift */,
 				35BA119C1EEC0F5B001AD8D6 /* Main.storyboard */,
 				35BA119F1EEC0F5B001AD8D6 /* Assets.xcassets */,
 				35BA11A11EEC0F5B001AD8D6 /* LaunchScreen.storyboard */,
@@ -211,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				356932581EEC492D0032A029 /* MedicationCell.swift in Sources */,
 				35BA119B1EEC0F5B001AD8D6 /* ViewController.swift in Sources */,
 				35BA11991EEC0F5B001AD8D6 /* AppDelegate.swift in Sources */,
 			);
@@ -384,6 +388,7 @@
 				35BA11A91EEC0F5B001AD8D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
