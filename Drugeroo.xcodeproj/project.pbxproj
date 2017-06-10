@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0D82B90E63A4C82CB34CD1C7 /* Pods_Drugeroo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44553D1E698473FA519BA148 /* Pods_Drugeroo.framework */; };
 		356932581EEC492D0032A029 /* MedicationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356932571EEC492D0032A029 /* MedicationCell.swift */; };
+		3569325A1EEC59300032A029 /* WarningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356932591EEC59300032A029 /* WarningViewController.swift */; };
+		3569325C1EEC62770032A029 /* OrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569325B1EEC62770032A029 /* OrderViewController.swift */; };
+		3569325E1EEC6CEF0032A029 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3569325D1EEC6CEF0032A029 /* MapViewController.swift */; };
 		35BA11991EEC0F5B001AD8D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BA11981EEC0F5B001AD8D6 /* AppDelegate.swift */; };
 		35BA119B1EEC0F5B001AD8D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35BA119A1EEC0F5B001AD8D6 /* ViewController.swift */; };
 		35BA119E1EEC0F5B001AD8D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 35BA119C1EEC0F5B001AD8D6 /* Main.storyboard */; };
@@ -18,6 +21,9 @@
 
 /* Begin PBXFileReference section */
 		356932571EEC492D0032A029 /* MedicationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicationCell.swift; sourceTree = "<group>"; };
+		356932591EEC59300032A029 /* WarningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarningViewController.swift; sourceTree = "<group>"; };
+		3569325B1EEC62770032A029 /* OrderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderViewController.swift; sourceTree = "<group>"; };
+		3569325D1EEC6CEF0032A029 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		35BA11951EEC0F5B001AD8D6 /* Drugeroo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Drugeroo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35BA11981EEC0F5B001AD8D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		35BA119A1EEC0F5B001AD8D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +81,9 @@
 				35BA11981EEC0F5B001AD8D6 /* AppDelegate.swift */,
 				35BA119A1EEC0F5B001AD8D6 /* ViewController.swift */,
 				356932571EEC492D0032A029 /* MedicationCell.swift */,
+				356932591EEC59300032A029 /* WarningViewController.swift */,
+				3569325B1EEC62770032A029 /* OrderViewController.swift */,
+				3569325D1EEC6CEF0032A029 /* MapViewController.swift */,
 				35BA119C1EEC0F5B001AD8D6 /* Main.storyboard */,
 				35BA119F1EEC0F5B001AD8D6 /* Assets.xcassets */,
 				35BA11A11EEC0F5B001AD8D6 /* LaunchScreen.storyboard */,
@@ -215,8 +224,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				356932581EEC492D0032A029 /* MedicationCell.swift in Sources */,
+				3569325E1EEC6CEF0032A029 /* MapViewController.swift in Sources */,
+				3569325C1EEC62770032A029 /* OrderViewController.swift in Sources */,
 				35BA119B1EEC0F5B001AD8D6 /* ViewController.swift in Sources */,
 				35BA11991EEC0F5B001AD8D6 /* AppDelegate.swift in Sources */,
+				3569325A1EEC59300032A029 /* WarningViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

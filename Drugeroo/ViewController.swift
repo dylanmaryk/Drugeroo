@@ -18,6 +18,7 @@ class ViewController: UIViewController, PusherDelegate {
     
     var pusher: Pusher!
     var channel: PusherChannel!
+    var medicationImageSelected: UIImage!
     
     let disposeBag = DisposeBag()
     
@@ -44,6 +45,12 @@ class ViewController: UIViewController, PusherDelegate {
                                                                             cell.medicationImageView.image = medication
             }.disposed(by: disposeBag)
         
+        medicationTableView.rx.itemSelected.subscribe(onNext: { indexPath in
+            let cell = self.medicationTableView.cellForRow(at: indexPath) as! MedicationCell
+            self.medicationImageSelected = cell.medicationImageView.image
+            self.performSegue(withIdentifier: "showWarning", sender: self)
+        }).disposed(by: disposeBag)
+        
         tabBar.selectedItem = tabBar.items?.first
     }
     
@@ -57,8 +64,13 @@ class ViewController: UIViewController, PusherDelegate {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let warningVC = segue.destination as! WarningViewController
+        warningVC.medicationImage = medicationImageSelected
+    }
+    
     func subscribedToChannel(name: String) {
-        channel.trigger(eventName: "client-my-event", data: ["key" : "value"])
+        //channel.trigger(eventName: "client-my-event", data: ["key" : "value"])
     }
     
     func debugLog(message: String) {
