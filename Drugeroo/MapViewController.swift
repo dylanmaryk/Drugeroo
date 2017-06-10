@@ -17,6 +17,9 @@ class MapViewController: UIViewController, PusherDelegate {
     var channel: PusherChannel!
     
     private let marker = GMSMarker()
+    private let pharmacyOrangeMarker = GMSMarker()
+    private let pharmacyGreenMarker = GMSMarker()
+    private let houseMarker = GMSMarker()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +37,19 @@ class MapViewController: UIViewController, PusherDelegate {
         
         marker.icon = UIImage(named: "marker")
         marker.map = mapView
-        marker.appearAnimation = .pop
+        
+        pharmacyOrangeMarker.icon = UIImage(named: "pharmacyOrange")
+        pharmacyOrangeMarker.position = CLLocationCoordinate2D(latitude: 52.53507, longitude: 13.39637)
+        pharmacyOrangeMarker.map = mapView
+        
+        pharmacyGreenMarker.icon = UIImage(named: "pharmacyGreen")
+        pharmacyGreenMarker.position = CLLocationCoordinate2D(latitude: 52.53507, longitude: 13.39637)
+        
+        houseMarker.icon = UIImage(named: "house")
+        houseMarker.position = CLLocationCoordinate2D(latitude: 52.53032, longitude: 13.40332)
     }
     
     private func moveAlong(polyline: GMSPolyline) {
-        marker.position = (polyline.path?.coordinate(at: 0))!
-        
         for coordinateIndex in UInt(0) ..< (polyline.path?.count())! {
             let delay = Double(coordinateIndex * 2)
             DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
@@ -52,11 +62,17 @@ class MapViewController: UIViewController, PusherDelegate {
     }
     
     private func onEventReceived() {
+        pharmacyOrangeMarker.map = nil
+        pharmacyGreenMarker.map = mapView
+        
         let polyline = GMSPolyline(path: GMSPath(fromEncodedPath: "wkt_IclwpA`KsGlHwB~@fJ"))
         moveAlong(polyline: polyline)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-            let polyline2 = GMSPolyline(path: GMSPath(fromEncodedPath: "gvs_IoxwpA~@fJNj@zDcD?wBhEcAI_FrP_NImI"))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+            self.pharmacyGreenMarker.map = nil
+            self.houseMarker.map = self.mapView
+            
+            let polyline2 = GMSPolyline(path: GMSPath(fromEncodedPath: "gts_IgmwpANj@zDcD?wBhEcAI_FrP_NImI"))
             self.moveAlong(polyline: polyline2)
         })
     }
