@@ -135,6 +135,7 @@
 				TargetAttributes = {
 					35BA11941EEC0F5B001AD8D6 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = LSN5GDP52Q;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -355,7 +356,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LSN5GDP52Q;
 				INFOPLIST_FILE = Drugeroo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.drugeroo.Drugeroo;
@@ -371,7 +372,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = LSN5GDP52Q;
 				INFOPLIST_FILE = Drugeroo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = io.drugeroo.Drugeroo;

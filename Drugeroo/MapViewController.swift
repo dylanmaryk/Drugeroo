@@ -50,7 +50,31 @@ class MapViewController: UIViewController, PusherDelegate {
         houseMarker.position = CLLocationCoordinate2D(latitude: 52.53032, longitude: 13.40332)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-            self.notificationImageView.image = UIImage(named: "notification-3")
+            self.set(notificationImage: UIImage(named: "notification-3"))
+        })
+    }
+    
+    private func onEventReceived() {
+        pharmacyOrangeMarker.map = nil
+        pharmacyGreenMarker.map = mapView
+        
+        set(notificationImage: UIImage(named: "notification-4"))
+        
+        let polyline = GMSPolyline(path: GMSPath(fromEncodedPath: "wkt_IclwpA`KsGlHwB~@fJ"))
+        moveAlong(polyline: polyline) {
+            self.set(notificationImage: UIImage(named: "notification-5"))
+        }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
+            self.pharmacyGreenMarker.map = nil
+            self.houseMarker.map = self.mapView
+            
+            self.set(notificationImage: UIImage(named: "notification-6"))
+            
+            let polyline2 = GMSPolyline(path: GMSPath(fromEncodedPath: "gts_IgmwpANj@zDcD?wBhEcAI_FrP_NImI"))
+            self.moveAlong(polyline: polyline2) {
+                self.set(notificationImage: UIImage(named: "notification-7"))
+            }
         })
     }
     
@@ -70,28 +94,10 @@ class MapViewController: UIViewController, PusherDelegate {
         }
     }
     
-    private func onEventReceived() {
-        pharmacyOrangeMarker.map = nil
-        pharmacyGreenMarker.map = mapView
-        
-        self.notificationImageView.image = UIImage(named: "notification-4")
-        
-        let polyline = GMSPolyline(path: GMSPath(fromEncodedPath: "wkt_IclwpA`KsGlHwB~@fJ"))
-        moveAlong(polyline: polyline) {
-            self.notificationImageView.image = UIImage(named: "notification-5")
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
-            self.pharmacyGreenMarker.map = nil
-            self.houseMarker.map = self.mapView
-            
-            self.notificationImageView.image = UIImage(named: "notification-6")
-            
-            let polyline2 = GMSPolyline(path: GMSPath(fromEncodedPath: "gts_IgmwpANj@zDcD?wBhEcAI_FrP_NImI"))
-            self.moveAlong(polyline: polyline2) {
-                self.notificationImageView.image = UIImage(named: "notification-7")
-            }
-        })
+    private func set(notificationImage: UIImage?) {
+        UIView.transition(with: notificationImageView, duration: 1, options: .transitionCrossDissolve, animations: {
+            self.notificationImageView.image = notificationImage
+        }, completion: nil)
     }
     
     func subscribedToChannel(name: String) {
