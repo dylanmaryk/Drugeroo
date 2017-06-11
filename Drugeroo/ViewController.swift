@@ -11,9 +11,9 @@ import RxSwift
 import UIKit
 
 class ViewController: UIViewController {
-    @IBOutlet var categoryTableView: UITableView!
-    @IBOutlet var medicationTableView: UITableView!
-    @IBOutlet var tabBar: UITabBar!
+    @IBOutlet weak var categoryTableView: UITableView!
+    @IBOutlet weak var medicationTableView: UITableView!
+    @IBOutlet weak var tabBar: UITabBar!
     
     var medicationImageSelected: UIImage!
     

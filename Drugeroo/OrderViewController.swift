@@ -9,7 +9,7 @@
 import UIKit
 
 class OrderViewController: UIViewController {
-    @IBOutlet var medicationImageView: UIImageView!
+    @IBOutlet weak var medicationImageView: UIImageView!
     
     var medicationImage: UIImage!
     

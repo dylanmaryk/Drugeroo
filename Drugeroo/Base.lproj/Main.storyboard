@@ -269,11 +269,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="notification-1" translatesAutoresizingMaskIntoConstraints="NO" id="YI1-VA-Gr3">
+                                <rect key="frame" x="0.0" y="465" width="375" height="202"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.81568627449999997" blue="0.73725490199999999" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="mapView" destination="NTf-DO-oXU" id="nTK-7s-Ovi"/>
+                        <outlet property="notificationImageView" destination="YI1-VA-Gr3" id="LGS-JS-bMJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SwJ-rg-25d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -303,6 +308,7 @@
         <image name="buttonBackgroundOne" width="176" height="93"/>
         <image name="buttonBackgroundTwo" width="176" height="93"/>
         <image name="deliveryOptions" width="375" height="100"/>
+        <image name="notification-1" width="375" height="202"/>
         <image name="orders" width="17" height="17"/>
         <image name="paypal" width="342" height="54"/>
         <image name="settings" width="19" height="19"/>

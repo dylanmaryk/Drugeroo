@@ -12,6 +12,7 @@ import UIKit
 
 class MapViewController: UIViewController, PusherDelegate {
     @IBOutlet weak var mapView: GMSMapView!
+    @IBOutlet weak var notificationImageView: UIImageView!
     
     var pusher: Pusher!
     var channel: PusherChannel!
@@ -47,9 +48,13 @@ class MapViewController: UIViewController, PusherDelegate {
         
         houseMarker.icon = UIImage(named: "house")
         houseMarker.position = CLLocationCoordinate2D(latitude: 52.53032, longitude: 13.40332)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+            self.notificationImageView.image = UIImage(named: "notification-3")
+        })
     }
     
-    private func moveAlong(polyline: GMSPolyline) {
+    private func moveAlong(polyline: GMSPolyline, completion: @escaping (Void) -> Void) {
         for coordinateIndex in UInt(0) ..< (polyline.path?.count())! {
             let delay = Double(coordinateIndex * 2)
             DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
@@ -57,6 +62,10 @@ class MapViewController: UIViewController, PusherDelegate {
                 CATransaction.setAnimationDuration(1)
                 self.marker.position = (polyline.path?.coordinate(at: coordinateIndex))!
                 CATransaction.commit()
+                
+                if coordinateIndex == (polyline.path?.count())! - 1 {
+                    completion()
+                }
             })
         }
     }
@@ -65,15 +74,23 @@ class MapViewController: UIViewController, PusherDelegate {
         pharmacyOrangeMarker.map = nil
         pharmacyGreenMarker.map = mapView
         
+        self.notificationImageView.image = UIImage(named: "notification-4")
+        
         let polyline = GMSPolyline(path: GMSPath(fromEncodedPath: "wkt_IclwpA`KsGlHwB~@fJ"))
-        moveAlong(polyline: polyline)
+        moveAlong(polyline: polyline) {
+            self.notificationImageView.image = UIImage(named: "notification-5")
+        }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 10, execute: {
             self.pharmacyGreenMarker.map = nil
             self.houseMarker.map = self.mapView
             
+            self.notificationImageView.image = UIImage(named: "notification-6")
+            
             let polyline2 = GMSPolyline(path: GMSPath(fromEncodedPath: "gts_IgmwpANj@zDcD?wBhEcAI_FrP_NImI"))
-            self.moveAlong(polyline: polyline2)
+            self.moveAlong(polyline: polyline2) {
+                self.notificationImageView.image = UIImage(named: "notification-7")
+            }
         })
     }
     
