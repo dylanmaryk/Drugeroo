@@ -74,6 +74,8 @@ class MapViewController: UIViewController, PusherDelegate {
             let polyline2 = GMSPolyline(path: GMSPath(fromEncodedPath: "gts_IgmwpANj@zDcD?wBhEcAI_FrP_NImI"))
             self.moveAlong(polyline: polyline2) {
                 self.set(notificationImage: UIImage(named: "notification-7"))
+                
+                self.channel.trigger(eventName: "client-driver-arrived-event", data: [])
             }
         })
     }
